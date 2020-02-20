@@ -22,27 +22,27 @@ public class AppClient extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        requestQueue= Volley.newRequestQueue(this);
+        requestQueue = Volley.newRequestQueue(this);
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
     }
-    public static String getUserName()
-    {
-        return preferences.getString("UserName","");
-    }
-    public static void setUserName(String UserName)
-    {
-        preferences.edit().putString("UserName",UserName).apply();
+
+    public static String getUserName() {
+        return preferences.getString("UserName", "");
     }
 
-    public static String getPassWord()
-    {
-        return preferences.getString("PassWord","");
+    public static void setUserName(String UserName) {
+        preferences.edit().putString("UserName", UserName).apply();
     }
-    public static  void setPassWord(String PassWord)
-    {
-        preferences.edit().putString("PassWord",PassWord).apply();
+
+    public static String getPassWord() {
+        return preferences.getString("PassWord", "");
     }
-    public static void setRequestQueue(JsonObjectRequest jsonObjectRequest){
+
+    public static void setPassWord(String PassWord) {
+        preferences.edit().putString("PassWord", PassWord).apply();
+    }
+
+    public static void setRequestQueue(JsonObjectRequest jsonObjectRequest) {
         requestQueue.add(jsonObjectRequest);
     }
     public static  String getXz()

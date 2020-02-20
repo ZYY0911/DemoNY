@@ -11,11 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.S_YHDLActivity">
+        <activity android:name=".activity.Z_ZYActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activity.Z_RCSCZYActivity">
+
         </activity>
         <activity android:name=".activity.S_YHZCActivity"/>
         <activity android:name=".activity.S_ZHMMActivity"/>
