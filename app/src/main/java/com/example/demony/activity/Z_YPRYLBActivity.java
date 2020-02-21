@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -72,7 +73,7 @@ public class Z_YPRYLBActivity extends AppCompatActivity {
 
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-
+                        Log.i("aaa", "onErrorResponse: "+volleyError);
                     }
                 }).start();
 
@@ -125,6 +126,9 @@ public class Z_YPRYLBActivity extends AppCompatActivity {
                 }
             }
         }
+        Log.i("aaa", "setListView: "+zpxxe2.size());
+        Log.i("aaa", "setListView: "+zpxxes.size());
+        Log.i("aaa", "setListView: "+jlfs.size());
         adapter  = new YPRYAdapter(zpxxe2,integers);
         recycleView.setLayoutManager(layoutManager);
         recycleView.setAdapter(adapter);

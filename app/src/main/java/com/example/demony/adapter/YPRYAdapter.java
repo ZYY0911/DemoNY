@@ -51,8 +51,8 @@ public class YPRYAdapter extends RecyclerView.Adapter<YPRYAdapter.MyHolde>{
     @Override
     public void onBindViewHolder(@NonNull MyHolde myHolde, int i) {
         final ZPXX qyzp = qyzps.get(i);
-        myHolde.item_num.setText("编号:" + qyzp.getGw().split("-")[1]);
-        myHolde.item_gw.setText("岗位:" + qyzp.getGw().split("-")[0]);
+        myHolde.item_num.setText("编号:" + qyzp.getBh());
+        myHolde.item_gw.setText("岗位:" + qyzp.getGw());
         myHolde.item_name.setText("公司名:" + qyzp.getNaem());
         myHolde.item_rs.setText("应聘人数:" + integers.get(i));
         myHolde.cardView.setOnClickListener(new View.OnClickListener() {

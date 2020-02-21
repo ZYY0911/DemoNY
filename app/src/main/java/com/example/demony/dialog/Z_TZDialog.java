@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.android.volley.VolleyError;
 import com.example.demony.R;
+import com.example.demony.net.VolleyLo;
+import com.example.demony.net.Z_VolleyTo;
+
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,9 +41,10 @@ public class Z_TZDialog extends DialogFragment {
     Button btExit;
     Unbinder unbinder;
     private String title;
-
-    public Z_TZDialog(String title) {
+    private String userNm;
+    public Z_TZDialog(String title,String userNm) {
         this.title = title;
+        this.userNm = userNm;
     }
 
     @Nullable
@@ -77,6 +84,23 @@ public class Z_TZDialog extends DialogFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_sure:
+                if (!"".equals(userNm)){
+                    Z_VolleyTo volleyTo = new Z_VolleyTo();
+                    volleyTo.setUrl("send_notifi_info")
+                            .setJsonObject("name",userNm.trim())
+                            .setJsonObject("msg",inputText.getText().toString().trim())
+                            .setVolleyLo(new VolleyLo() {
+                                @Override
+                                public void onResponse(JSONObject jsonObject) {
+                                    Log.i("eee", "onResponse: ");
+                                }
+
+                                @Override
+                                public void onErrorResponse(VolleyError volleyError) {
+                                    Log.i("eee", "onErrorResponse: "+volleyError);
+                                }
+                            }).start();
+                }
                 returnData.getDateMsg(inputText.getText().toString());
                 getDialog().dismiss();
                 break;

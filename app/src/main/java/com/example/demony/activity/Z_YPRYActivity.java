@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -195,7 +196,7 @@ public class Z_YPRYActivity extends AppCompatActivity {
                         } else if (holder.radioDx.isChecked()) {
                             final Intent intent = new Intent(Intent.ACTION_VIEW);
                             intent.putExtra("address", tel);
-                            final Z_TZDialog dialog1 = new Z_TZDialog("请输入短信内容");
+                            final Z_TZDialog dialog1 = new Z_TZDialog("请输入短信内容","");
                             dialog1.show(getSupportFragmentManager(), "Aaa");
                             dialog1.setReturnData(new Z_TZDialog.ReturnData() {
                                 @Override
@@ -213,7 +214,7 @@ public class Z_YPRYActivity extends AppCompatActivity {
                                 }
                             });
                         } else if (holder.radioTz.isChecked()) {
-                            final Z_TZDialog dialog1 = new Z_TZDialog("请输入通知内容");
+                            final Z_TZDialog dialog1 = new Z_TZDialog("请输入通知内容",userNa);
                             dialog1.show(getSupportFragmentManager(), "Aaa");
                             dialog1.setReturnData(new Z_TZDialog.ReturnData() {
                                 @Override
@@ -222,8 +223,6 @@ public class Z_YPRYActivity extends AppCompatActivity {
                                         dialog.dismiss();
                                         dialog1.dismiss();
                                     } else {
-                                        dialog.dismiss();
-                                        dialog1.dismiss();
                                         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                                         Notification notification = new NotificationCompat.Builder(Z_YPRYActivity.this)
                                                 .setContentTitle("通知")
@@ -233,21 +232,7 @@ public class Z_YPRYActivity extends AppCompatActivity {
                                                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
                                                 .build();
                                         manager.notify(1, notification);
-                                        Z_VolleyTo volleyTo = new Z_VolleyTo();
-                                        volleyTo.setUrl("send_notifi_info")
-                                                .setJsonObject("mag",msg)
-                                                .setJsonObject("name",userNa)
-                                                .setVolleyLo(new VolleyLo() {
-                                                    @Override
-                                                    public void onResponse(JSONObject jsonObject) {
 
-                                                    }
-
-                                                    @Override
-                                                    public void onErrorResponse(VolleyError volleyError) {
-
-                                                    }
-                                                }).start();
                                     }
                                 }
                             });
