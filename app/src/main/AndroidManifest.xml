@@ -10,8 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.S_SZActivity"/>
         <activity android:name=".activity.S_YHDLActivity">
-        <activity android:name=".activity.Z_ZYActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,9 +21,12 @@
         <activity android:name=".activity.Z_RCSCZYActivity">
 
         </activity>
+        <activity android:name=".activity.S_SHActivity"/>
+        <activity android:name=".activity.S_FBZPActivity"/>
         <activity android:name=".activity.S_YHZCActivity"/>
         <activity android:name=".activity.S_ZHMMActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".activity.S_SHLSActivity"/>
     </application>
 
 </manifest>
