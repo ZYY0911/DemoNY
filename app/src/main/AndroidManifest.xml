@@ -21,6 +21,12 @@
         <activity android:name=".activity.Z_RCSCZYActivity">
 
         </activity>
+        <activity android:name=".activity.Z_YPRYLBActivity">
+
+        </activity>
+        <activity android:name=".activity.Z_YPRYActivity">
+
+        </activity>
     </application>
 
 </manifest>
