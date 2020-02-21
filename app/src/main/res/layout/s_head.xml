@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="82dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/title"
+                android:layout_marginLeft="30dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="#000"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="XXX"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:id="@+id/title1"
+            android:textSize="35dp"
+            android:textColor="#000"
+            />
+        <LinearLayout
+            android:gravity="right"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginRight="30dp"
+                android:textSize="30dp"
+                android:id="@+id/title2"
+                android:textColor="#000"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#2196F3"
+        />
+</LinearLayout>
