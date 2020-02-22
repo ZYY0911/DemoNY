@@ -28,9 +28,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.S_SZActivity"/>
-        <activity android:name=".activity.S_GYSLBActivity">
+        <activity android:name=".activity.S_GYSLBActivity"/>
         <activity android:name=".activity.S_YHDLActivity"/>
-        <activity android:name=".activity.Z_ZYActivity">
+        <activity android:name=".activity.S_GHYWCXActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -55,6 +55,7 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".activity.S_SHLSActivity"/>
         <activity android:name=".activity.S_GYSXQActivity"/>
+        <activity android:name=".activity.S_FPTPActivity"/>
     </application>
 
 </manifest>
