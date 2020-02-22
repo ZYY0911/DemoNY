@@ -30,7 +30,7 @@
         <activity android:name=".activity.S_SZActivity"/>
         <activity android:name=".activity.S_GYSLBActivity"/>
         <activity android:name=".activity.S_YHDLActivity"/>
-        <activity android:name=".activity.S_GHYWCXActivity">
+        <activity android:name=".activity.S_YLKCGLActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -56,6 +56,8 @@
         <activity android:name=".activity.S_SHLSActivity"/>
         <activity android:name=".activity.S_GYSXQActivity"/>
         <activity android:name=".activity.S_FPTPActivity"/>
+        <activity android:name=".activity.S_GHYWCXActivity"/>
+        <activity android:name=".activity.S_KCXQActivity"/>
     </application>
 
 </manifest>
