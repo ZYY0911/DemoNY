@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="120dp">
+   <HorizontalScrollView
+       android:scrollbars="none"
+       android:layout_width="match_parent"
+       android:layout_height="120dp">
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="120dp">
+
+           <LinearLayout
+               android:gravity="center"
+               android:layout_width="380dp"
+               android:layout_height="match_parent">
+               <ImageView
+                   android:layout_width="100dp"
+                   android:layout_height="100dp"
+                   android:id="@+id/im"
+                   />
+           </LinearLayout>
+           <TextView
+               android:layout_width="400dp"
+               android:layout_marginLeft="380dp"
+               android:layout_height="match_parent"
+
+               android:text="编号"
+               android:id="@+id/mc"
+               android:textSize="30dp"
+               android:textColor="#000"
+
+               android:gravity="center"
+               />
+           <TextView
+               android:layout_width="500dp"
+               android:layout_height="match_parent"
+               android:text="编号"
+               android:layout_marginLeft="780dp"
+               android:id="@+id/jg"
+               android:textSize="30dp"
+               android:textColor="#000"
+               android:gravity="center"
+               />
+           <TextView
+               android:layout_width="120dp"
+               android:id="@+id/sc"
+               android:text="删除"
+               android:textSize="35dp"
+               android:textColor="#fff"
+               android:gravity="center"
+               android:background="#ff0000"
+               android:layout_marginLeft="1280dp"
+               android:layout_height="match_parent" />
+           <TextView
+               android:layout_width="120dp"
+               android:id="@+id/xg"
+               android:text="修改"
+               android:textSize="35dp"
+               android:textColor="#fff"
+               android:gravity="center"
+               android:background="#00ff00"
+               android:layout_marginLeft="1400dp"
+               android:layout_height="match_parent" />
+       </RelativeLayout>
+   </HorizontalScrollView>
+</LinearLayout>
