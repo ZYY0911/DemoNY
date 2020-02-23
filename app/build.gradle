@@ -38,7 +38,9 @@ dependencies {
     implementation('com.github.bumptech.glide:glide:4.9.0') {
         exclude group: "com.android.support"
     }
+    implementation 'com.belerweb:pinyin4j:2.5.0'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation files('libs/jxl-2.6.12.jar')
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.haibin:calendarview:3.6.2'
 }
