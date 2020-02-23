@@ -86,7 +86,7 @@ public class S_YHDLActivity extends AppCompatActivity {
                                 AppClient.setPassWord(m);
                                 AppClient.setUserName(y);
                                 AppClient.setName(y);
-                                startActivity(new Intent(S_YHDLActivity.this, MainActivity.class));
+                                startActivity(new Intent(S_YHDLActivity.this, S_SZActivity.class));
                                 finish();
                                 return;
                             }

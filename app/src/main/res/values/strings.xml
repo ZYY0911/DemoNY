@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">DemoNY</string>
+    <string-array name="xl">
+        <item>小学</item>
+        <item>初中</item>
+        <item>高中</item>
+        <item>大专</item>
+        <item>本科</item>
+        <item>研究生</item>
+        <item>博士</item>
+        <item>硕士</item>
+    </string-array>
 </resources>
