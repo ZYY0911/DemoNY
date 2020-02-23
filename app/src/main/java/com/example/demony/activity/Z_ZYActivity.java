@@ -100,6 +100,7 @@ public class Z_ZYActivity extends AppCompatActivity {
         volleyTo.setUrl("get_factory_info")
                 .setLoop(true)
                 .setTime(3000)
+                .setHeaders("Content-Type","application/json")
                 .setVolleyLo(new VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
@@ -133,11 +134,13 @@ public class Z_ZYActivity extends AppCompatActivity {
             case R.id.bt_forth:
                 break;
             case R.id.layout_gys:
+                startActivity(new Intent(this,Z_GYSActivity.class));
                 break;
             case R.id.layout_rcsc:
                 startActivity(new Intent(this,Z_RCSCZYActivity.class));
                 break;
             case R.id.layout_ylkc:
+                startActivity(new Intent(this,Text.class));
                 break;
             case R.id.layout_ygxx:
                 break;

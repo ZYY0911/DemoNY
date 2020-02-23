@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.demony">
+
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -11,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.S_YHDLActivity"/>
+        <activity android:name=".activity.Z_GYSCXActivity"></activity>
+        <activity android:name=".activity.S_YHDLActivity" />
         <activity android:name=".activity.Z_ZYActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,19 +21,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Z_RCSCZYActivity">
+        <activity android:name=".activity.Z_RCSCZYActivity"></activity>
+        <activity android:name=".activity.Z_YPRYLBActivity"></activity>
+        <activity android:name=".activity.Z_YPRYActivity"></activity>
+        <activity android:name=".activity.S_YHZCActivity" />
+        <activity android:name=".activity.S_ZHMMActivity" />
+        <activity android:name=".activity.Z_XXTAActivity" />
+        <activity android:name=".activity.Z_GYSActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".activity.Text"/>
+        <activity android:name=".activity.Z_LXGYSActivity">
 
         </activity>
-        <activity android:name=".activity.Z_YPRYLBActivity">
-
-        </activity>
-        <activity android:name=".activity.Z_YPRYActivity">
-
-        </activity>
-        <activity android:name=".activity.S_YHZCActivity"/>
-        <activity android:name=".activity.S_ZHMMActivity"/>
-        <activity android:name=".activity.Z_XXTAActivity"/>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".activity.Z_GYSTJActivity"/>
+        <activity android:name=".activity.Z_TJXQActivity"/>
     </application>
 
 </manifest>
