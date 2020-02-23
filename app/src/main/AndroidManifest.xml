@@ -58,6 +58,11 @@
         <activity android:name=".activity.S_FPTPActivity"/>
         <activity android:name=".activity.S_GHYWCXActivity"/>
         <activity android:name=".activity.S_KCXQActivity"/>
+        <activity android:name=".activity.S_CKLSActivity"/>
+        <activity android:name=".activity.S_XSXQActivity"/>
+        <activity android:name=".activity.S_CKActivity"/>
+        <activity android:name=".activity.S_CKLSActivity1"/>
+        <activity android:name=".activity.S_CHLSXQActivity"/>
     </application>
 
 </manifest>
