@@ -16,6 +16,7 @@ import com.example.demony.bean.Z_Jxx;
 import com.example.demony.bean.Z_Rk;
 import com.example.demony.bean.Z_Sp;
 import com.example.demony.net.VolleyLo;
+import com.example.demony.net.Z_VolleyLo;
 import com.example.demony.net.Z_VolleyTo;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
@@ -78,6 +79,7 @@ public class Z_GYSTJActivity extends AppCompatActivity {
         setContentView(R.layout.gystj_layout);
         ButterKnife.bind(this);
         setVolley_LeftTop();
+        title.setText("供应商--供应商统计");
     }
 
 
@@ -132,7 +134,7 @@ public class Z_GYSTJActivity extends AppCompatActivity {
     private void setVolley_LeftBottom() {
         Z_VolleyTo volleyTo = new Z_VolleyTo();
         volleyTo.setUrl("get_supplier_transaction")
-                .setVolleyLo(new VolleyLo() {
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         z_rks = new Gson().fromJson(jsonObject.optJSONArray("ROWS_DETAIL").toString()
@@ -150,22 +152,13 @@ public class Z_GYSTJActivity extends AppCompatActivity {
     }
 
     private String getGysBh(String gys) {
-        switch (gys) {
-            case "10001":
-                return "公司A";
-            case "10002":
-                return "公司B";
-            case "10003":
-                return "公司C";
-            case "10004":
-                return "公司D";
-            case "10005":
-                return "公司E";
-            case "10006":
-                return "公司F";
-            default :
-                return "";
+        for (int i = 0; i < jxxes.size(); i++) {
+            Z_Jxx jxx = jxxes.get(i);
+            if (jxx.getGysbh().equals(gys)){
+                return jxx.getMc();
+            }
         }
+        return "";
     }
 
     private void initLeftBottom() {
@@ -208,7 +201,7 @@ public class Z_GYSTJActivity extends AppCompatActivity {
     private void setVolley_RightTop() {
         Z_VolleyTo volleyTo = new Z_VolleyTo();
         volleyTo.setUrl("get_tjyl")
-                .setVolleyLo(new VolleyLo() {
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         sps = new Gson().fromJson(jsonObject.optJSONArray("ROWS_DETAIL").toString()
@@ -237,8 +230,8 @@ public class Z_GYSTJActivity extends AppCompatActivity {
                     list.add(jxxes.get(j));
                 }
             }
-            if (jxxes.size() != 0) {
-                String name = jxxes.get(0).getMc();
+            if (list.size() != 0) {
+                String name = list.get(0).getMc();
                 Integer count = map.get(name);
                 map.put(name, (count == null) ? 1 : count + 1);
                 strings.add(name);
@@ -275,7 +268,7 @@ public class Z_GYSTJActivity extends AppCompatActivity {
     private void setVolley_LeftTop() {
         Z_VolleyTo volleyTo = new Z_VolleyTo();
         volleyTo.setUrl("get_gyslb")
-                .setVolleyLo(new VolleyLo() {
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         jxxes = new Gson().fromJson(jsonObject.optJSONArray("ROWS_DETAIL").toString()

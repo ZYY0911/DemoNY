@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide;
 import com.example.demony.R;
 import com.example.demony.bean.FSTZ;
 import com.example.demony.net.VolleyLo;
+import com.example.demony.net.Z_VolleyLo;
 import com.example.demony.net.Z_VolleyTo;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -90,7 +91,7 @@ public class Z_RCSCZYActivity extends AppCompatActivity {
         drawerLayout.openDrawer(Gravity.START);
         Z_VolleyTo volleyTo = new Z_VolleyTo();
         volleyTo.setUrl("get_notifi_info")
-                .setVolleyLo(new VolleyLo() {
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         fstzs = new Gson().fromJson(jsonObject.optJSONArray("ROWS_DETAIL").toString(), new TypeToken<List<FSTZ>>() {

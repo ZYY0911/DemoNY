@@ -16,6 +16,7 @@ import com.example.demony.adapter.LXGYSAdapter;
 import com.example.demony.bean.Z_Jxx;
 import com.example.demony.bean.Z_Sp;
 import com.example.demony.net.VolleyLo;
+import com.example.demony.net.Z_VolleyLo;
 import com.example.demony.net.Z_VolleyTo;
 
 import org.json.JSONArray;
@@ -53,10 +54,11 @@ public class Z_LXGYSActivity extends AppCompatActivity {
         setContentView(R.layout.lxgys_layout);
         ButterKnife.bind(this);
         gys = new ArrayList<>();
+        title.setText("联系供应商");
         sps = new ArrayList<>();
         Z_VolleyTo volleyTo = new Z_VolleyTo();
         volleyTo.setUrl("get_gyslb")
-                .setVolleyLo(new VolleyLo() {
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         JSONArray jsonArray = jsonObject.optJSONArray("ROWS_DETAIL");
@@ -99,7 +101,7 @@ public class Z_LXGYSActivity extends AppCompatActivity {
     private void setVolley_Sp() {
         Z_VolleyTo volleyTo = new Z_VolleyTo();
         volleyTo.setUrl("get_tjyl")
-                .setVolleyLo(new VolleyLo() {
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         /*sps = new Gson().fromJson(jsonObject.optJSONArray("ROWS_DETAIL").toString()
