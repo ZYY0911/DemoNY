@@ -32,7 +32,7 @@
         <activity android:name=".activity.S_GHYWCXActivity"/>
         <activity android:name=".activity.Z_GYSCXActivity"></activity>
 
-        <activity android:name=".activity.Z_ZYActivity">
+        <activity android:name=".activity.S_CLKCActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -64,6 +64,15 @@
         <activity android:name=".activity.Z_TJXXActivity"/>
         <activity android:name=".activity.Z_WXCJActivity"/>
 
+        <activity android:name=".activity.S_CKLSActivity"/>
+        <activity android:name=".activity.S_XSXQActivity"/>
+        <activity android:name=".activity.S_CKActivity"/>
+        <activity android:name=".activity.S_CKLSActivity1"/>
+        <activity android:name=".activity.S_CHLSXQActivity"/>
+        <activity android:name=".activity.S_XQYActivity"/>
+        <activity android:name=".activity.S_GWCActivity"/>
+        <activity android:name=".activity.S_ZFJMActivity"/>
+        <activity android:name=".activity.S_WDDDDActivity"/>
     </application>
 
 </manifest>

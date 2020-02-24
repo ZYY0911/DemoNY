@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.demony.bean.Gwc;
 
 
 import org.litepal.LitePal;
@@ -19,6 +20,11 @@ public class AppClient extends Application {
     private static RequestQueue requestQueue;
     private static SharedPreferences preferences;
 
+    public List<Gwc> getMgwc() {
+        return mgwc;
+    }
+
+    private List<Gwc> mgwc = new ArrayList<>();
     @Override
     public void onCreate() {
         super.onCreate();

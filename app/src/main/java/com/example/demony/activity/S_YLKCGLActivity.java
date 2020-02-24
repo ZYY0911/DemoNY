@@ -1,5 +1,6 @@
 package com.example.demony.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTransaction;
@@ -10,7 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.demony.R;
+import com.example.demony.fragment.S_Fragment_ck;
 import com.example.demony.fragment.S_Fragment_kc;
+import com.example.demony.fragment.S_Fragment_rk;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,18 +53,32 @@ public class S_YLKCGLActivity extends AppCompatActivity {
 
     @OnClick({R.id.change, R.id.kc, R.id.yj, R.id.rk, R.id.ck})
     public void onViewClicked(View view) {
+        ft = getSupportFragmentManager().beginTransaction();
         switch (view.getId()) {
             case R.id.change:
                 finish();
                 break;
             case R.id.kc:
+                ft.replace(R.id.line,new S_Fragment_kc());
+                kc.setTextColor(Color.GREEN);
+                rk.setTextColor(Color.BLACK);
+                ck.setTextColor(Color.BLACK);
                 break;
             case R.id.yj:
                 break;
             case R.id.rk:
+                ft.replace(R.id.line,new S_Fragment_rk());
+                rk.setTextColor(Color.GREEN);
+                kc.setTextColor(Color.BLACK);
+                ck.setTextColor(Color.BLACK);
                 break;
             case R.id.ck:
+                ft.replace(R.id.line,new S_Fragment_ck());
+                ck.setTextColor(Color.GREEN);
+                kc.setTextColor(Color.BLACK);
+                rk.setTextColor(Color.BLACK);
                 break;
         }
+        ft.commit();
     }
 }
