@@ -50,11 +50,13 @@ public class Z_GYSActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.layout_create1:
+                startActivity(new Intent(this, S_GYSLBActivity.class));
                 break;
             case R.id.layout_create2:
                 startActivity(new Intent(this, Z_GYSCXActivity.class));
                 break;
             case R.id.layout_create3:
+                startActivity(new Intent(this, S_GHYWCXActivity.class));
                 break;
             case R.id.layout_create4:
                 startActivity(new Intent(this, Z_GYSTJActivity.class));

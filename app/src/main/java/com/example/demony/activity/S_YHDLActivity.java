@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,19 +53,19 @@ public class S_YHDLActivity extends AppCompatActivity {
         setContentView(R.layout.s_yhdlactivity);
         ButterKnife.bind(this);
         inview();
-
     }
+
 
     private void inview() {
         title.setText("用户注册");
         title1.setText("用户登录");
         title2.setText("找回密码");
-        if (AppClient.getXz().equals("记住密码"))
+        if (AppClient.getJzmm().equals("记住密码"))
         {
             yhm.setText(AppClient.getUserName());
             mm.setText(AppClient.getPassWord());
         }
-        if (AppClient.getXz().equals("自动登录"))
+        if (AppClient.getZddl().equals("自动登录"))
         {
             startActivity(new Intent(S_YHDLActivity.this, Z_ZYActivity.class));
         }
@@ -83,6 +85,19 @@ public class S_YHDLActivity extends AppCompatActivity {
                             if (y.equals(jsonObject1.optString("username"))&&jsonObject1.optString("password").equals(m))
                             {
                                 Toast.makeText(S_YHDLActivity.this,"登录成功",Toast.LENGTH_LONG).show();
+                                if (zddl.isChecked())
+                                {
+                                    AppClient.setZddl("自动登录");
+                                }else {
+                                    AppClient.setZddl("");
+                                }
+                                if (jzmm.isChecked())
+                                {
+                                    AppClient.setJzmm("记住密码");
+                                }else {
+                                    AppClient.setJzmm("");
+                                }
+
                                 AppClient.setPassWord(m);
                                 AppClient.setUserName(y);
                                 AppClient.setName(y);
@@ -100,7 +115,7 @@ public class S_YHDLActivity extends AppCompatActivity {
                 }).start();
     }
 
-    @OnClick({R.id.title, R.id.title2, R.id.jzmm, R.id.zddl, R.id.qd, R.id.qx})
+    @OnClick({R.id.title, R.id.title2, R.id.qd, R.id.qx})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.title:
@@ -108,13 +123,6 @@ public class S_YHDLActivity extends AppCompatActivity {
                 break;
             case R.id.title2:
                 startActivity(new Intent(S_YHDLActivity.this,S_ZHMMActivity.class));
-                break;
-            case R.id.jzmm:
-                AppClient.setXz("记住密码");
-                break;
-            case R.id.zddl:
-                AppClient.setXz("自动登录");
-
                 break;
             case R.id.qd:
                 String y = yhm.getText().toString();

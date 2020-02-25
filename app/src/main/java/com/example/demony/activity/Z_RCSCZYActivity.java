@@ -60,10 +60,13 @@ public class Z_RCSCZYActivity extends AppCompatActivity {
                 Class myClass = null;
                 switch (menuItem.getItemId()) {
                     case R.id.first:
+                        startActivity(new Intent(Z_RCSCZYActivity.this, S_WDJLActivity.class));
                         break;
                     case R.id.second:
+                        startActivity(new Intent(Z_RCSCZYActivity.this, S_CKZPActivity.class));
                         break;
                     case R.id.third:
+                        startActivity(new Intent(Z_RCSCZYActivity.this, S_SZActivity.class));
                         break;
                     case R.id.forth:
                         startActivity(new Intent(Z_RCSCZYActivity.this, Z_YPRYLBActivity.class));
@@ -72,6 +75,7 @@ public class Z_RCSCZYActivity extends AppCompatActivity {
                         startActivity(new Intent(Z_RCSCZYActivity.this, Z_XXTAActivity.class));
                         break;
                     case R.id.six:
+                        finish();
                         break;
                 }
                 drawerLayout.closeDrawers();

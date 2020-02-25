@@ -14,6 +14,7 @@ import com.example.demony.R;
 import com.example.demony.fragment.S_Fragment_ck;
 import com.example.demony.fragment.S_Fragment_kc;
 import com.example.demony.fragment.S_Fragment_rk;
+import com.example.demony.fragment.Z_YZSZFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -61,15 +62,22 @@ public class S_YLKCGLActivity extends AppCompatActivity {
             case R.id.kc:
                 ft.replace(R.id.line,new S_Fragment_kc());
                 kc.setTextColor(Color.GREEN);
+                yj.setTextColor(Color.BLACK);
                 rk.setTextColor(Color.BLACK);
                 ck.setTextColor(Color.BLACK);
                 break;
             case R.id.yj:
+                ft.replace(R.id.line,new Z_YZSZFragment(S_YLKCGLActivity.this));
+                yj.setTextColor(Color.GREEN);
+                kc.setTextColor(Color.BLACK);
+                rk.setTextColor(Color.BLACK);
+                ck.setTextColor(Color.BLACK);
                 break;
             case R.id.rk:
                 ft.replace(R.id.line,new S_Fragment_rk());
                 rk.setTextColor(Color.GREEN);
                 kc.setTextColor(Color.BLACK);
+                yj.setTextColor(Color.BLACK);
                 ck.setTextColor(Color.BLACK);
                 break;
             case R.id.ck:
@@ -77,6 +85,7 @@ public class S_YLKCGLActivity extends AppCompatActivity {
                 ck.setTextColor(Color.GREEN);
                 kc.setTextColor(Color.BLACK);
                 rk.setTextColor(Color.BLACK);
+                yj.setTextColor(Color.BLACK);
                 break;
         }
         ft.commit();

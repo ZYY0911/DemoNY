@@ -67,14 +67,7 @@ public class AppClient extends Application {
     public static void setRequestQueue(JsonObjectRequest jsonObjectRequest) {
         requestQueue.add(jsonObjectRequest);
     }
-    public static  String getXz()
-    {
-        return  preferences.getString("Xz","");
-    }
-    public static void setXz(String Xz)
-    {
-        preferences.edit().putString("Xz",Xz).apply();
-    }
+
     public static String getName()
     {
         return preferences.getString("Name","");
@@ -82,5 +75,23 @@ public class AppClient extends Application {
     public static void setName(String Name)
     {
         preferences.edit().putString("Name",Name).apply();
+    }
+
+    public static  String getJzmm()
+    {
+        return  preferences.getString("Jzmm","");
+    }
+    public static void setJzmm(String Jzmm)
+    {
+        preferences.edit().putString("Jzmm",Jzmm).apply();
+    }
+
+    public static  String getZddl()
+    {
+        return  preferences.getString("Zddl","");
+    }
+    public static void setZddl(String Zddl)
+    {
+        preferences.edit().putString("Zddl",Zddl).apply();
     }
 }

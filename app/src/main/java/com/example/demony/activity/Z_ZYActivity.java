@@ -128,12 +128,16 @@ public class Z_ZYActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_first:
+                startActivity(new Intent(this,S_CJActivity.class));
                 break;
             case R.id.bt_second:
+                startActivity(new Intent(this,S_CJActivity.class));
                 break;
             case R.id.bt_third:
+                startActivity(new Intent(this,S_CJActivity.class));
                 break;
             case R.id.bt_forth:
+                startActivity(new Intent(this,S_CJActivity.class));
                 break;
             case R.id.layout_gys:
                 startActivity(new Intent(this,Z_GYSActivity.class));
@@ -142,6 +146,7 @@ public class Z_ZYActivity extends AppCompatActivity {
                 startActivity(new Intent(this,Z_RCSCZYActivity.class));
                 break;
             case R.id.layout_ylkc:
+                startActivity(new Intent(this,S_YLKCGLActivity.class));
                 break;
             case R.id.layout_ygxx:
                 startActivity(new Intent(this,Z_YGXXActivity.class));
@@ -150,6 +155,7 @@ public class Z_ZYActivity extends AppCompatActivity {
                 startActivity(new Intent(this,Z_WXCJActivity.class));
                 break;
             case R.id.layout_clkc:
+                startActivity(new Intent(this,S_CLKCActivity.class));
                 break;
             case R.id.timg1:
                 bgImage.setBackgroundResource(R.drawable.timg4);

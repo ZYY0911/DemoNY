@@ -24,7 +24,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_weight="0.9"
                         android:text="公司名称"
                         android:id="@+id/gsmc"
                         android:textSize="25dp"
@@ -34,7 +34,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_weight="0.9"
                         android:text="公司名称"
                         android:id="@+id/hylx"
                         android:textSize="25dp"
@@ -44,7 +44,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_weight="0.9"
                         android:text="公司名称"
                         android:id="@+id/gwmc"
                         android:textSize="25dp"
@@ -54,7 +54,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_weight="0.9"
                         android:text="公司名称"
                         android:textSize="25dp"
                         android:id="@+id/zyyq"
@@ -64,12 +64,17 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_weight="0.2"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.2"
                         android:text="公司名称"
                         android:textSize="25dp"
                         android:id="@+id/cs"
                         android:textColor="#000"
-                        android:gravity="center"
+                        android:gravity="center_vertical"
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -79,7 +84,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_weight="0.9"
                         android:text="公司名称"
                         android:id="@+id/xl"
                         android:textSize="25dp"
@@ -89,7 +94,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_weight="0.9"
                         android:text="公司名称"
                         android:textSize="25dp"
                         android:id="@+id/xz"
@@ -99,7 +104,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_weight="0.9"
                         android:text="公司名称"
                         android:textSize="25dp"
                         android:id="@+id/email"
@@ -109,7 +114,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_weight="0.9"
                         android:text="公司名称"
                         android:id="@+id/fabsj"
                         android:textSize="25dp"
@@ -119,12 +124,17 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_weight="0.2"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.2"
                         android:id="@+id/shr"
                         android:text="公司名称"
                         android:textSize="25dp"
                         android:textColor="#000"
-                        android:gravity="center"
+                        android:gravity="center_vertical"
                         />
                 </LinearLayout>
             </LinearLayout>

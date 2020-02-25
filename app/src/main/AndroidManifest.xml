@@ -32,16 +32,20 @@
         <activity android:name=".activity.Z_ZYActivity"/>
         <activity android:name=".activity.S_GHYWCXActivity"/>
         <activity android:name=".activity.Z_GYSCXActivity"></activity>
-
         <activity android:name=".activity.S_YHDLActivity">
-        <activity android:name=".activity.Z_ZYActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.S_CJActivity"/>
+        <activity android:name=".activity.S_CLKCActivity"/>
         <activity android:name=".activity.S_WDJLActivity"/>
+        <activity android:name=".activity.S_CKZPActivity"/>
+        <activity android:name=".activity.S_GYSXQActivity"/>
+        <activity android:name=".activity.S_TJGYSActivity"/>
+        <activity android:name=".activity.S_YLKCGLActivity"/>
         <activity android:name=".activity.S_CKZPActivity1"/>
         <activity android:name=".activity.Z_RCSCZYActivity"></activity>
         <activity android:name=".activity.Z_YPRYLBActivity"></activity>
