@@ -13,6 +13,7 @@ import com.android.volley.VolleyError;
 import com.example.demony.R;
 import com.example.demony.bean.ZYBean;
 import com.example.demony.net.VolleyLo;
+import com.example.demony.net.Z_VolleyLo;
 import com.example.demony.net.Z_VolleyTo;
 import com.example.demony.util.SimpData;
 import com.google.gson.Gson;
@@ -98,10 +99,10 @@ public class Z_ZYActivity extends AppCompatActivity {
     private void setVolley() {
         volleyTo  =new Z_VolleyTo();
         volleyTo.setUrl("get_factory_info")
-                .setLoop(true)
-                .setTime(3000)
-                .setHeaders("Content-Type","application/json")
-                .setVolleyLo(new VolleyLo() {
+               // .setLoop(true)
+               // .setTime(3000)
+                //.setHeaders("Content-Type","application/json")
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         ZYBean zyBean  =new Gson().fromJson(jsonObject.optJSONArray("ROWS_DETAIL").optJSONObject(0).toString()
@@ -140,11 +141,12 @@ public class Z_ZYActivity extends AppCompatActivity {
                 startActivity(new Intent(this,Z_RCSCZYActivity.class));
                 break;
             case R.id.layout_ylkc:
-                startActivity(new Intent(this,Text.class));
                 break;
             case R.id.layout_ygxx:
+                startActivity(new Intent(this,Z_YGXXActivity.class));
                 break;
             case R.id.layout_wxcj:
+                startActivity(new Intent(this,Z_WXCJActivity.class));
                 break;
             case R.id.layout_clkc:
                 break;

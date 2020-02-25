@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.android.volley.VolleyError;
 import com.example.demony.R;
 import com.example.demony.net.VolleyLo;
+import com.example.demony.net.Z_VolleyLo;
 import com.example.demony.net.Z_VolleyTo;
 
 import org.json.JSONObject;
@@ -89,7 +90,7 @@ public class Z_TZDialog extends DialogFragment {
                     volleyTo.setUrl("send_notifi_info")
                             .setJsonObject("name",userNm.trim())
                             .setJsonObject("msg",inputText.getText().toString().trim())
-                            .setVolleyLo(new VolleyLo() {
+                            .setVolleyLo(new Z_VolleyLo() {
                                 @Override
                                 public void onResponse(JSONObject jsonObject) {
                                     Log.i("eee", "onResponse: ");

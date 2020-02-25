@@ -17,6 +17,7 @@ import com.example.demony.adapter.ZPXXAdapter;
 import com.example.demony.bean.ZPXX;
 import com.example.demony.dialog.Z_JLDialog;
 import com.example.demony.net.VolleyLo;
+import com.example.demony.net.Z_VolleyLo;
 import com.example.demony.net.Z_VolleyTo;
 import com.example.demony.util.SimpData;
 import com.google.gson.Gson;
@@ -66,7 +67,7 @@ public class Z_CKZPActivity extends AppCompatActivity {
     private void setVolley() {
         Z_VolleyTo volleyTo = new Z_VolleyTo();
         volleyTo.setUrl("get_factory_recruit")
-                .setVolleyLo(new VolleyLo() {
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         zpxxes = new Gson().fromJson(jsonObject.optJSONArray("ROWS_DETAIL").toString()

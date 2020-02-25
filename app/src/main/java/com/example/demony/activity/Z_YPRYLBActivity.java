@@ -16,6 +16,7 @@ import com.example.demony.adapter.YPRYAdapter;
 import com.example.demony.bean.YPRY;
 import com.example.demony.bean.ZPXX;
 import com.example.demony.net.VolleyLo;
+import com.example.demony.net.Z_VolleyLo;
 import com.example.demony.net.Z_VolleyTo;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -61,7 +62,7 @@ public class Z_YPRYLBActivity extends AppCompatActivity {
     private void initData() {
         Z_VolleyTo volleyTo = new Z_VolleyTo();
         volleyTo.setUrl("get_factory_fbzp")
-                .setVolleyLo(new VolleyLo() {
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         zpxxes = new Gson().fromJson(jsonObject.optJSONArray("ROWS_DETAIL").toString()
@@ -82,7 +83,7 @@ public class Z_YPRYLBActivity extends AppCompatActivity {
     private void setVolley_JL() {
         Z_VolleyTo volleyTo = new Z_VolleyTo();
         volleyTo.setUrl("get_factory_application")
-                .setVolleyLo(new VolleyLo() {
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         jlfs = new Gson().fromJson(jsonObject.optJSONArray("ROWS_DETAIL").toString()

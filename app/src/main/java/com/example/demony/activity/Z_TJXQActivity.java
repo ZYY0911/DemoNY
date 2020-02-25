@@ -19,6 +19,7 @@ import com.example.demony.bean.Z_Jxx;
 import com.example.demony.bean.Z_Rk;
 import com.example.demony.bean.Z_Sp;
 import com.example.demony.net.VolleyLo;
+import com.example.demony.net.Z_VolleyLo;
 import com.example.demony.net.Z_VolleyTo;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -64,7 +65,7 @@ public class Z_TJXQActivity extends AppCompatActivity {
     private void setVolley_LeftBottom() {
         Z_VolleyTo volleyTo = new Z_VolleyTo();
         volleyTo.setUrl("get_supplier_transaction")
-                .setVolleyLo(new VolleyLo() {
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         z_rks = new Gson().fromJson(jsonObject.optJSONArray("ROWS_DETAIL").toString()
@@ -83,7 +84,7 @@ public class Z_TJXQActivity extends AppCompatActivity {
     private void setVolley_RightTop() {
         Z_VolleyTo volleyTo = new Z_VolleyTo();
         volleyTo.setUrl("get_tjyl")
-                .setVolleyLo(new VolleyLo() {
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         sps = new Gson().fromJson(jsonObject.optJSONArray("ROWS_DETAIL").toString()
@@ -103,7 +104,7 @@ public class Z_TJXQActivity extends AppCompatActivity {
     private void setVolley_LeftTop() {
         Z_VolleyTo volleyTo = new Z_VolleyTo();
         volleyTo.setUrl("get_gyslb")
-                .setVolleyLo(new VolleyLo() {
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         jxxes = new Gson().fromJson(jsonObject.optJSONArray("ROWS_DETAIL").toString()
@@ -235,22 +236,13 @@ public class Z_TJXQActivity extends AppCompatActivity {
         expandedMenu.setAdapter(new MyAdapter());
     }
     private String getGysBh(String gys) {
-        switch (gys) {
-            case "10001":
-                return "公司A";
-            case "10002":
-                return "公司B";
-            case "10003":
-                return "公司C";
-            case "10004":
-                return "公司D";
-            case "10005":
-                return "公司E";
-            case "10006":
-                return "公司F";
-            default :
-                return "";
+        for (int i = 0; i < jxxes.size(); i++) {
+            Z_Jxx jxx = jxxes.get(i);
+            if (jxx.getGysbh().equals(gys)){
+                return jxx.getMc();
+            }
         }
+        return "";
     }
     private void initCs() {
         strings = new ArrayList<>();

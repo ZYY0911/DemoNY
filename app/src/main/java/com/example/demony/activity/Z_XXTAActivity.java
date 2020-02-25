@@ -14,6 +14,7 @@ import com.example.demony.adapter.TZ_Adapter;
 import com.example.demony.bean.FSTZ;
 import com.example.demony.dialog.Z_TZDialog;
 import com.example.demony.net.VolleyLo;
+import com.example.demony.net.Z_VolleyLo;
 import com.example.demony.net.Z_VolleyTo;
 import com.example.demony.util.ShowDialog;
 import com.google.gson.Gson;
@@ -55,7 +56,7 @@ public class Z_XXTAActivity extends AppCompatActivity {
     private void initData() {
         Z_VolleyTo volleyTo = new Z_VolleyTo();
         volleyTo.setUrl("get_notifi_info")
-                .setVolleyLo(new VolleyLo() {
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         fstzs = new Gson().fromJson(jsonObject.optJSONArray("ROWS_DETAIL").toString(), new TypeToken<List<FSTZ>>() {
@@ -80,7 +81,7 @@ public class Z_XXTAActivity extends AppCompatActivity {
                                         volleyTo1.setUrl("request_notif_info")
                                                 .setJsonObject("request",msg)
                                                 .setJsonObject("id",fstzs.get(psoiton).getId())
-                                                .setVolleyLo(new VolleyLo() {
+                                              .setVolleyLo(new Z_VolleyLo() {
                                                     @Override
                                                     public void onResponse(JSONObject jsonObject) {
                                                         ShowDialog.ShowMsg("发送成功",Z_XXTAActivity.this);

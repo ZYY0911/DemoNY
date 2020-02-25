@@ -20,6 +20,7 @@ import com.example.demony.fragment.TBFXFragment1;
 import com.example.demony.fragment.TBFXFragment3;
 import com.example.demony.fragment.TBFXFragment4;
 import com.example.demony.net.VolleyLo;
+import com.example.demony.net.Z_VolleyLo;
 import com.example.demony.net.Z_VolleyTo;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -61,7 +62,7 @@ public class Z_TBXXActivity extends AppCompatActivity {
     private void setVolley() {
         Z_VolleyTo volleyTo = new Z_VolleyTo();
         volleyTo.setUrl("get_factory_information")
-                .setVolleyLo(new VolleyLo() {
+                .setVolleyLo(new Z_VolleyLo() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         z_jbxxes = new Gson().fromJson(jsonObject.optJSONArray("ROWS_DETAIL").toString()

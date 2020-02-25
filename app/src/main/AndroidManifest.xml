@@ -60,6 +60,11 @@
         <activity android:name=".activity.Z_TJXQActivity"/>
         <activity android:name=".activity.S_SHActivity"/>
         <activity android:name=".activity.S_FBZPActivity"/>
+        <activity android:name=".activity.Z_YGXXActivity"/>
+        <activity android:name=".activity.Z_XGXXActivity"/>
+        <activity android:name=".activity.Z_TJXXActivity"/>
+        <activity android:name=".activity.Z_WXCJActivity"/>
+
         <activity android:name=".activity.S_CKLSActivity"/>
         <activity android:name=".activity.S_XSXQActivity"/>
         <activity android:name=".activity.S_CKActivity"/>
