@@ -59,6 +59,7 @@ public class S_JLActivity extends AppCompatActivity {
         inview();
         huoqu1();
 
+        huoqu();
 
     }
 
@@ -134,7 +135,7 @@ public class S_JLActivity extends AppCompatActivity {
                             }
                         }
                         Log.d("0000000", "onResponse: ---"+mzp);
-                        huoqu();
+
 
                     }
 

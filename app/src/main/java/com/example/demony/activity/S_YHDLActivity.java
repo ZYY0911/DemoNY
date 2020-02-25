@@ -65,7 +65,7 @@ public class S_YHDLActivity extends AppCompatActivity {
         }
         if (AppClient.getXz().equals("自动登录"))
         {
-            startActivity(new Intent(S_YHDLActivity.this, MainActivity.class));
+            startActivity(new Intent(S_YHDLActivity.this, Z_ZYActivity.class));
         }
 
     }
@@ -86,7 +86,7 @@ public class S_YHDLActivity extends AppCompatActivity {
                                 AppClient.setPassWord(m);
                                 AppClient.setUserName(y);
                                 AppClient.setName(y);
-                                startActivity(new Intent(S_YHDLActivity.this, S_CKZPActivity.class));
+                                startActivity(new Intent(S_YHDLActivity.this, Z_ZYActivity.class));
                                 finish();
                                 return;
                             }

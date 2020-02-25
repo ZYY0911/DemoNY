@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -57,8 +58,33 @@ public class S_CJActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         inview();
         huoqu();
+        huoqu1();
 
     }
+    private void huoqu1() {
+        S_VolleyTo volleyTo = new S_VolleyTo();
+        volleyTo.setUrl("get_factory_info")
+                .setTime(3000)
+                .setLoop(true)
+                .setVolleyLo(new VolleyLo() {
+                    @Override
+                    public void onResponse(JSONObject jsonObject) {
+                        JSONArray jsonArray = jsonObject.optJSONArray("ROWS_DETAIL");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jsonObject1 = jsonArray.optJSONObject(i);
+                            Log.d("000000", "onResponse: ---" +jsonObject1.optString("gz"));
+                        }
+                        //Log.d("000000", "onResponse: ---" );
+                    }
+
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        Log.d("000000", "volleyError: ---" );
+
+                    }
+                }).start();
+    }
+
 
     private void huoqu() {
         S_VolleyTo volleyTo  =new S_VolleyTo();
