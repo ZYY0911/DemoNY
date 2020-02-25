@@ -20,7 +20,7 @@ import java.util.Map;
 
 
 public class Z_VolleyTo extends Thread {
-    private String Url = "http://192.168.2.160:3333/";
+    private String Url = "http://192.168.2.160:8099/";
     private boolean isLoop;
     private int time;
     private JSONObject jsonObject = new JSONObject();
@@ -77,7 +77,7 @@ public class Z_VolleyTo extends Thread {
     public void run() {
         super.run();
         do {
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST
                     ,Url, jsonObject, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject jsonObject) {

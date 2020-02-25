@@ -123,7 +123,7 @@ public class Z_YPRYActivity extends AppCompatActivity {
     private void setListView() {
         for (int i = ypries.size() - 1; i >= 0; i--) {
             YPRY ypry = ypries.get(i);
-            if (!ypry.getUsername().split("-")[1].equals(name)) {
+            if (!ypry.getGsm().equals(name)) {
                 ypries.remove(i);
             }
         }
@@ -132,7 +132,7 @@ public class Z_YPRYActivity extends AppCompatActivity {
         for (int i = 0; i < ypries.size(); i++) {
             YPRY ypry = ypries.get(i);
             for (int j = 0; j < jbxxes.size(); j++) {
-                if (ypry.getUsername().split("-")[0].equals(jbxxes.get(j).getUser())) {
+                if (ypry.getUsername().equals(jbxxes.get(j).getUser())) {
                     jbxxes2.add(jbxxes.get(j));
                 }
             }
@@ -168,6 +168,7 @@ public class Z_YPRYActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.iv_cd:
+                startActivity(new Intent(this,Z_TBXXActivity.class));
                 break;
             case R.id.bu_fx:
                 if (adapter2.isIs()) {

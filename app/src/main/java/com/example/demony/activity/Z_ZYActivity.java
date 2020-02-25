@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -99,8 +100,8 @@ public class Z_ZYActivity extends AppCompatActivity {
     private void setVolley() {
         volleyTo  =new Z_VolleyTo();
         volleyTo.setUrl("get_factory_info")
-               // .setLoop(true)
-               // .setTime(3000)
+               .setLoop(true)
+                .setTime(3000)
                 //.setHeaders("Content-Type","application/json")
                 .setVolleyLo(new Z_VolleyLo() {
                     @Override
@@ -118,7 +119,7 @@ public class Z_ZYActivity extends AppCompatActivity {
 
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-
+                        Log.i("aaa", "onErrorResponse: "+volleyError);
                     }
                 }).start();
     }

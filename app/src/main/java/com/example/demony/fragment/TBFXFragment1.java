@@ -59,8 +59,6 @@ public class TBFXFragment1 extends Fragment {
     }
 
     private void initData() {
-        if (jbxxes==null)jbxxes = new ArrayList<>();
-        else jbxxes.clear();
         a=0;
         b=0;
         c=0;
@@ -77,28 +75,40 @@ public class TBFXFragment1 extends Fragment {
         else colors1.clear();
         for (int i = 0; i < jbxxes.size(); i++) {
             Z_Jbxx jbxx = jbxxes.get(i);
-            try {
-                int year = Integer.parseInt(jbxx.getGzjl());
-                if (year == 0) {
-                    a++;
-                } else if (year == 1) {
-                    b++;
-                } else if (year > 1 && year < 3) {
-                    c++;
-                } else {
-                    d++;
+
+                try {
+                    int year = Integer.parseInt(jbxx.getGzjl());
+                    if (year == 0) {
+                        a++;
+                    } else if (year == 1) {
+                        b++;
+                    } else if (year > 1 && year < 3) {
+                        c++;
+                    } else {
+                        d++;
+                    }
+                    switch (jbxx.getSex()) {
+                        case "男":
+                            e++;
+                            break;
+                        case "女":
+                            f++;
+                            break;
+                    }
+                } catch (NumberFormatException es) {
+                    es.printStackTrace();
+                    if (jbxx.getGzjl().equals("无")){
+                        a++;
+                    }
+                    switch (jbxx.getSex()) {
+                        case "男":
+                            e++;
+                            break;
+                        case "女":
+                            f++;
+                            break;
+                    }
                 }
-                switch (jbxx.getSex()) {
-                    case "男":
-                        e++;
-                        break;
-                    case "女":
-                        f++;
-                        break;
-                }
-            } catch (NumberFormatException e) {
-                e.printStackTrace();
-            }
         }
         pieEntries.add(new PieEntry(a, "无"));
         pieEntries.add(new PieEntry(b, "1年"));
