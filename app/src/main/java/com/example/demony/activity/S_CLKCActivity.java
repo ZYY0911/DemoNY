@@ -5,14 +5,21 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.volley.VolleyError;
 import com.example.demony.R;
 import com.example.demony.fragment.S_Fragment_jc;
 import com.example.demony.fragment.S_Fragment_suv;
+import com.example.demony.net.S_VolleyTo;
+import com.example.demony.net.VolleyLo;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,6 +50,30 @@ public class S_CLKCActivity extends AppCompatActivity {
         ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.line, new S_Fragment_jc());
         ft.commit();
+      //  huoqu();
+    }
+
+    private void huoqu() {
+        S_VolleyTo volleyTo = new S_VolleyTo();
+        volleyTo.setUrl("get_hjzb")
+                .setTime(3000)
+                .setLoop(true)
+                .setVolleyLo(new VolleyLo() {
+                    @Override
+                    public void onResponse(JSONObject jsonObject) {
+                        JSONArray jsonArray = jsonObject.optJSONArray("ROWS_DETAIL");
+                        for (int i=0;i<jsonArray.length();i++)
+                        {
+                            JSONObject jsonObject1 = jsonArray.optJSONObject(i);
+                            Log.d("0000000", "onResponse: ----"+jsonObject1.optString("ql"));
+                        }
+                    }
+
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                    }
+                }).start();
     }
 
     @OnClick({R.id.change, R.id.jc, R.id.suv, R.id.title1})

@@ -72,7 +72,7 @@ public class Z_VolleyTo extends Thread {
     public void run() {
         super.run();
         do {
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, Url, jsonObject, new Response.Listener<JSONObject>() {
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Url, jsonObject, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject jsonObject) {
                     volleyLo.onResponse(jsonObject);

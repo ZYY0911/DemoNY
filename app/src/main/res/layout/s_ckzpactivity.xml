@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/s_head3"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:background="#659CCF"
+        android:gravity="center_vertical"
+        android:layout_width="1200dp"
+        android:layout_height="80dp">
+        <RelativeLayout
+            android:layout_width="1100dp"
+            android:layout_height="match_parent">
+            <TextView
+
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="1150dp"
+                android:layout_height="60dp"
+                android:background="@drawable/ckzpbk1"
+                />
+            <EditText
+                android:layout_width="800dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="110dp"
+                android:singleLine="true"
+                android:id="@+id/shuru"
+                android:layout_marginTop="15dp"
+                android:background="#F1F1F1"
+                />
+            <ImageView
+                android:layout_marginLeft="50dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/bai1"
+                />
+        </RelativeLayout>
+        <TextView
+            android:gravity="center"
+            android:id="@+id/chazhao"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="查找"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/ckzpbk2"
+            android:textSize="22dp"
+            android:textColor="#000"
+            />
+    </LinearLayout>
+    <ListView
+        android:layout_width="1200dp"
+        android:id="@+id/listView"
+        android:layout_height="match_parent">
+
+    </ListView>
+</LinearLayout>
