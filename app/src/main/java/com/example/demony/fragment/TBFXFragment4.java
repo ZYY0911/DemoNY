@@ -54,8 +54,6 @@ public class TBFXFragment4 extends Fragment {
     }
 
     private void initData() {
-        if (jbxxes==null)jbxxes = new ArrayList<>();
-        else jbxxes.clear();
         d=0;
         a=0;
         c=0;

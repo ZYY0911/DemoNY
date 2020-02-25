@@ -106,7 +106,7 @@ public class Z_YPRYLBActivity extends AppCompatActivity {
             ZPXX zpxx = zpxxes.get(i);
             for (int j = 0; j < jlfs.size(); j++) {
                 YPRY ypry = jlfs.get(j);
-                if (ypry.getUsername().split("-")[1].equals(zpxx.getNaem().split("-")[0])){
+                if (ypry.getUsername().equals(zpxx.getNaem())){
                     infex++;
                 }
             }
@@ -114,7 +114,7 @@ public class Z_YPRYLBActivity extends AppCompatActivity {
         }
         for (int i = jlfs.size()-1; i >=0 ; i--) {
             YPRY ypry = jlfs.get(i);
-            if (!ypry.getUsername().split("-")[0].equals("user1")){
+            if (!ypry.getUsername().equals("user1")){
                 jlfs.remove(i);
             }
         }
@@ -122,7 +122,7 @@ public class Z_YPRYLBActivity extends AppCompatActivity {
         for (int i = 0; i < jlfs.size(); i++) {
             YPRY ypry = jlfs.get(i);
             for (int j = 0; j < zpxxes.size(); j++) {
-                if (ypry.getUsername().split("-")[1].equals(zpxxes.get(j).getNaem())){
+                if (ypry.getGsm().equals(zpxxes.get(j).getNaem())){
                     zpxxe2.add(zpxxes.get(j));
                 }
             }

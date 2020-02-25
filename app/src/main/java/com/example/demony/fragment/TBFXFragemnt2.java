@@ -23,7 +23,9 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import org.litepal.LitePal;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Create by 张瀛煜 on 2020-02-21 ：）
@@ -37,6 +39,7 @@ public class TBFXFragemnt2 extends Fragment {
     private List<BarEntry> barEntries;
     private List<Z_Jbxx> jbxxes;
     private int a, b, c, d;
+    private Map<String,Integer> map;
 
     @Nullable
     @Override
@@ -52,47 +55,36 @@ public class TBFXFragemnt2 extends Fragment {
     }
 
     private void initData() {
+        List<String> xValue = new ArrayList<>();
+        map  =new HashMap<>();
         a=0;
         c=0;
         d=0;
         b=0;
-        if (jbxxes==null)jbxxes = new ArrayList<>();
-        else jbxxes.clear();
         for (int i = 0; i < jbxxes.size(); i++) {
-            switch (jbxxes.get(i).getZy()) {
-                case "计算机应用":
-                    a++;
-                    break;
-                case "软件开发":
-                    b++;
-                    break;
-                case "数字媒体":
-                    c++;
-                    break;
-                case "其他":
-                    d++;
-                    break;
-
+            Integer count = map.get(jbxxes.get(i).getZy());
+            map.put(jbxxes.get(i).getZy(),(count==null)?1:count+1);
+            xValue.add(jbxxes.get(i).getZy());
+        }
+        for (int i = xValue.size()-1; i >0 ; i--) {
+            for (int j = 0; j <i ; j++) {
+                if (xValue.get(i).equals(xValue.get(j))){
+                    xValue.remove(i);
+                }
             }
         }
         if (barEntries==null)barEntries = new ArrayList<>();
         else barEntries.clear();
-        barEntries.add(new BarEntry(1, a));
-        barEntries.add(new BarEntry(2, b));
-        barEntries.add(new BarEntry(3, c));
-        barEntries.add(new BarEntry(4, d));
-        List<String> xValue = new ArrayList<>();
+        for (int i = 0; i < map.size(); i++) {
+            barEntries.add(new BarEntry(i+1, map.get(xValue.get(i))));
+        }
+        xValue.add(0,"");
+        xValue.add("");
         List<Integer> colors = new ArrayList<>();
         colors.add(Color.parseColor("#36a9ce"));
         colors.add(Color.parseColor("#673AB7"));
         colors.add(Color.parseColor("#FF5722"));
         colors.add(Color.parseColor("#009688"));
-        xValue.add("");
-        xValue.add("计算机应用");
-        xValue.add("软件开发");
-        xValue.add("数字媒体");
-        xValue.add("其他");
-        xValue.add("");
         BarDataSet dataSet = new BarDataSet(barEntries, "");
         dataSet.setColors(colors);
         BarData data = new BarData(dataSet);

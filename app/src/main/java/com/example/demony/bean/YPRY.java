@@ -5,15 +5,36 @@ package com.example.demony.bean;
  */
 public class YPRY {
 
+
     /**
-     * username : user1-公司A
+     * bh : 202002211
+     * gsm : 公司A
+     * username : user1
      * path :
-     * time : 2020-02-20 20:44
+     * time : 2020-02-02
      */
 
+    private String bh;
+    private String gsm;
     private String username;
     private String path;
     private String time;
+
+    public String getBh() {
+        return bh;
+    }
+
+    public void setBh(String bh) {
+        this.bh = bh;
+    }
+
+    public String getGsm() {
+        return gsm;
+    }
+
+    public void setGsm(String gsm) {
+        this.gsm = gsm;
+    }
 
     public String getUsername() {
         return username;
